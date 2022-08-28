@@ -2,7 +2,7 @@ export default {
   'en-us': {
     sidemenu: [
       {
-        title: 'header title',
+        title: 'Light Docs',
         children: [
           {
             title: 'demo1',
@@ -13,12 +13,50 @@ export default {
             link: '/en-us/docs/demo2.html',
           },
           {
-            title: 'dir',
-            opened: true,
+            title: 'CI/CD',
+            opened: false,
             children: [
               {
-                title: 'demo3',
-                link: '/en-us/docs/dir/demo3.html',
+                title: 'Install JDK',
+                link: '/en-us/docs/CI-CD/01-Install JDK.html',
+              },
+              {
+                title: 'Install NodeJS',
+                link: '/en-us/docs/CI-CD/02-Install NodeJS.html',
+              },
+              {
+                title: 'Install Maven',
+                link: '/en-us/docs/CI-CD/03-Install Maven.html',
+              },
+              {
+                title: 'Install Gitea',
+                link: '/en-us/docs/CI-CD/04-Install Gitea.html',
+              },
+              {
+                title: 'Install Nexus3',
+                link: '/en-us/docs/CI-CD/05-Install Nexus3.html',
+              },
+              {
+                title: 'Install Jenkins',
+                link: '/en-us/docs/CI-CD/06-Install Jenkins.html',
+              },
+              {
+                title: 'Install Docker Registry',
+                link: '/en-us/docs/CI-CD/07-Install Docker Registry.html',
+              },
+              {
+                title: 'Install Harbor',
+                link: '/en-us/docs/CI-CD/08-Install Harbor.html',
+              },
+            ],
+          },
+          {
+            title: 'K8s',
+            opened: false,
+            children: [
+              {
+                title: 'K8s Single Master Cluster',
+                link: '/en-us/docs/dir/K8s-Single-Master-Cluster.html',
               },
             ],
           },
@@ -30,7 +68,7 @@ export default {
   'zh-cn': {
     sidemenu: [
       {
-        title: '大标题',
+        title: 'Light Docs',
         children: [
           {
             title: '示例1',
@@ -41,12 +79,50 @@ export default {
             link: '/zh-cn/docs/demo2.html',
           },
           {
-            title: '目录',
-            opened: true,
+            title: 'CI/CD',
+            opened: false,
             children: [
               {
-                title: '示例3',
-                link: '/zh-cn/docs/dir/demo3.html',
+                title: 'Install JDK',
+                link: '/zh-cn/docs/CI-CD/01-Install JDK.html',
+              },
+              {
+                title: 'Install NodeJS',
+                link: '/zh-cn/docs/CI-CD/02-Install NodeJS.html',
+              },
+              {
+                title: 'Install Maven',
+                link: '/zh-cn/docs/CI-CD/03-Install Maven.html',
+              },
+              {
+                title: 'Install Gitea',
+                link: '/zh-cn/docs/CI-CD/04-Install Gitea.html',
+              },
+              {
+                title: 'Install Nexus3',
+                link: '/zh-cn/docs/CI-CD/05-Install Nexus3.html',
+              },
+              {
+                title: 'Install Jenkins',
+                link: '/zh-cn/docs/CI-CD/06-Install Jenkins.html',
+              },
+              {
+                title: 'Install Docker Registry',
+                link: '/zh-cn/docs/CI-CD/07-Install Docker Registry.html',
+              },
+              {
+                title: 'Install Harbor',
+                link: '/zh-cn/docs/CI-CD/08-Install Harbor.html',
+              },
+            ],
+          },
+          {
+            title: 'K8s',
+            opened: false,
+            children: [
+              {
+                title: 'K8s 单Master集群',
+                link: '/zh-cn/docs/dir/K8s-Single-Master-Cluster.html',
               },
             ],
           },
