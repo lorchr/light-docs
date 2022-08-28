@@ -33,8 +33,19 @@ docsite build
 ```
 
 ## 三、配置
+### 1. 修改网站路由搜索引擎 `site.js`
 
-### 1. 修改网站标题等信息`docsite.config.yml`
+```shell
+{
+  rootPath: '/light-docs', // 发布到服务器的根目录，需以/开头但不能有尾/，如果只有/，请填写空字符串
+  port: 8080, // 本地开发服务器的启动端口
+  domain: 'dubbo.apache.org', // 站点部署域名，无需协议和path等
+  defaultSearch: 'baidu', // 默认搜索引擎，baidu或者google
+  defaultLanguage: 'zh-cn',
+}
+```
+
+### 2. 修改网站标题等信息 `docsite.config.yml`
 
 ```yaml
 pages:
