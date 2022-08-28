@@ -1,4 +1,5 @@
 node_modules
+/build
 /en-us
 /zh-cn
 /md_json

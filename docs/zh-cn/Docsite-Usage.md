@@ -128,3 +128,43 @@ pages:
 ## 五、使用-博客
 
 ## 六、使用-社区
+
+## 七、部署
+1. 打包文件
+> docsite build
+
+2. 将生成的文档推送到新分支上
+```shell
+# 创建新分支
+git branch site
+
+# 切换分支
+git checkout site
+
+# 推送到远程仓库
+git push origin site
+```
+
+3. 提取生成的文件
+
+| 序号 | 文件或文件夹 | 作用       |
+| ---- | ------------ | ---------- |
+| 1    | build        | js css依赖 |
+| 2    | en-us        | 英文文档   |
+| 3    | zh-cn        | 中文文档   |
+| 4    | img          | 图片       |
+| 5    | index.html   | 首页       |
+| 6    | 404.html     | 404页      |
+
+4. 将文档上传到Gitee,在`服务-GiteePages`中选择要部署的分支
+5. 将文档上传到Github,在`Settings-GitHuo Pages`中选择要部署的分支
+6. 将文档上传到Nginx并配置访问路径
+
+```conf
+location /light-docs/ {
+  root /home/lorchr/light-docs;
+  index index.html;
+}
+
+error_page  404  /home/lorchr/light-docs/404.html;
+```
