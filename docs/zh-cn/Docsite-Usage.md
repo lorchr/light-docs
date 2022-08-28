@@ -143,6 +143,16 @@ git checkout site
 
 # 推送到远程仓库
 git push origin site
+
+# 生成ssh秘钥
+ssh-keygen -t rsa -C "whitetulips@163.com"
+cat ~/.ssh/id_rsa.pub
+
+# 添加Github地址
+git remote set-url --add origin https://github.com/lorchr/light-docs.git
+
+# 推送到Github
+git push
 ```
 
 3. 提取生成的文件
