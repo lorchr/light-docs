@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="06-Install-Jenkins" />
+	<meta name="description" content="06-Install-Jenkins" />
+	<!-- 网页标签标题 -->
+	<title>06-Install-Jenkins</title>
+	<link rel="shortcut icon" href="/light-docs/img/docsite.ico"/>
+	<link rel="stylesheet" href="/light-docs/build/documentation.css" />
+</head>
+<body>
+	<div id="root"><div class="documentation-page" data-reactroot=""><header class="header-container header-container-normal"><div class="header-body"><a href="/light-docs/zh-cn/index.html"><img class="logo" src="/light-docs/img/dubbo_colorful.png"/></a><div class="search search-normal"><span class="icon-search"></span></div><span class="language-switch language-switch-normal">En</span><div class="header-menu"><img class="header-menu-toggle" src="/light-docs/img/system/menu_gray.png"/><ul><li class="menu-item menu-item-normal"><a href="/light-docs/zh-cn/index.html" target="_self">首页</a></li><li class="menu-item menu-item-normal menu-item-normal-active"><a href="/light-docs/zh-cn/docs/demo1.html" target="_self">文档</a></li><li class="menu-item menu-item-normal"><a href="/light-docs/zh-cn/blog/index.html" target="_self">博客</a></li><li class="menu-item menu-item-normal"><a href="/light-docs/zh-cn/community/index.html" target="_self">社区</a></li></ul></div></div></header><div class="bar"><div class="bar-body"><img src="/light-docs/img/system/docs.png" class="front-img"/><span>文档</span><img src="/light-docs/img/system/docs.png" class="back-img"/></div></div><section class="content-section"><div class="sidemenu"><div class="sidemenu-toggle"><img src="https://img.alicdn.com/tfs/TB1E6apXHGYBuNjy0FoXXciBFXa-200-200.png"/></div><ul><li class="menu-item menu-item-level-1"><span>Light Docs</span><ul><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><a href="/light-docs/zh-cn/docs/Docsite-Usage.html" target="_self">Docsite 使用</a></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>Spring Boot<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/Spring-Boot/Spring-Boot.html" target="_self">Spring Boot</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>Spring Cloud<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/Spring-Cloud/Spring-Cloud.html" target="_self">Spring Cloud</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>Spring Security<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/Spring-Security/Spring-Security.html" target="_self">Spring Security</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>CI/CD<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/01-Install-JDK.html" target="_self">Install JDK</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/02-Install-NodeJS.html" target="_self">Install NodeJS</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/03-Install-Maven.html" target="_self">Install Maven</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/04-Install-Gitea.html" target="_self">Install Gitea</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/05-Install-Nexus3.html" target="_self">Install Nexus3</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/06-Install-Jenkins.html" target="_self">Install Jenkins</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/07-Install-Docker Registry.html" target="_self">Install Docker Registry</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/08-Install-Harbor.html" target="_self">Install Harbor</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>K8s<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/K8s/K8s-Single-Master-Cluster.html" target="_self">K8s 单Master集群</a></li></ul></li></ul></li></ul></div><div class="doc-content markdown-body"><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>服务</th>
+<th>IP</th>
+<th>Port</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Gitea</td>
+<td>192.168.137.101</td>
+<td>3000</td>
+<td><a href="http://192.168.137.101:3000/">http://192.168.137.101:3000/</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mysql</td>
+<td>192.168.137.101</td>
+<td>3306</td>
+<td>jdbc:mysql://192.168.137.101:3306/gitea</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jenkins</td>
+<td>192.168.137.101</td>
+<td>18080</td>
+<td><a href="http://192.168.137.101:18080/">http://192.168.137.101:18080/</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Registry</td>
+<td>192.168.137.102</td>
+<td>5000</td>
+<td><a href="http://192.168.137.102:5000/">http://192.168.137.102:5000/</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Harbor</td>
+<td>192.168.137.102</td>
+<td>5080</td>
+<td><a href="http://192.168.137.102:5080/">http://192.168.137.102:5080/</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Nexus</td>
+<td>192.168.137.102</td>
+<td>18081/18082/18083</td>
+<td><a href="http://192.168.137.102:18081/">http://192.168.137.102:18081/</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="%E5%85%AD%E3%80%81-%E5%AE%89%E8%A3%85-jenkins">六、 安装 Jenkins <a class="header-anchor" href="#%E5%85%AD%E3%80%81-%E5%AE%89%E8%A3%85-jenkins">#</a></h1>
+<ul>
+<li><a href="https://jenkins.io/zh/doc/">https://jenkins.io/zh/doc/</a></li>
+</ul>
+<h2 id="1.-%E5%AE%89%E8%A3%85">1. 安装 <a class="header-anchor" href="#1.-%E5%AE%89%E8%A3%85">#</a></h2>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 查看已有的jenkins</span>
+rpm -qa | grep jenkins
+<span class="hljs-meta">
+#</span><span class="bash"> rpm卸载</span>
+rpm -e jenkins 
+<span class="hljs-meta">
+#</span><span class="bash"> 检查是否卸载成功</span>
+rpm -ql jenkins
+<span class="hljs-meta">
+#</span><span class="bash"> 彻底删除残留文件</span>
+systemctl stop jenkins
+sudo yum -y remove jenkins
+sudo rm -rf /var/lib/jenkins
+sudo rm -rf /var/cache/jenkins
+sudo rm -rf /var/log/jenkins
+<span class="hljs-meta">
+#</span><span class="bash"> 安装Jenkins</span>
+rpm -ivh jenkins-2.235.5-1.1.noarch.rpm
+<span class="hljs-meta">
+#</span><span class="bash"> 修改Jenkins配置</span>
+vim /etc/sysconfig/jenkins
+<span class="hljs-meta">
+#</span><span class="bash"> 修改内容：</span>
+JENKINS_USER="root"
+JENKINS_PORT="18080"
+JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Djavax.net.ssl.trustStore=/etc/pki/ca-trust/extracted/java/cacerts"
+<span class="hljs-meta">
+#</span><span class="bash"> 设置本机jdk路径</span>
+which java # /usr/local/java/jdk1.8.0/bin/java
+vim /etc/init.d/jenkins
+candidates=""内添加java路径
+<span class="hljs-meta">
+#</span><span class="bash"> 设置权限</span>
+chown -R root:root /var/lib/jenkins
+chown -R root:root /var/log/jenkins
+chown -R root:root /var/cache/jenkins
+<span class="hljs-meta">
+#</span><span class="bash"> 重启jenkins</span>
+systemctl daemon-reload &amp;&amp; systemctl start jenkins
+</code></pre>
+<p>登录web页面：<a href="http://192.168.137.101:18080">http://192.168.137.101:18080</a></p>
+<ul>
+<li>admin/admin</li>
+</ul>
+<h2 id="2.-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE-jenkins">2. 初始化配置 Jenkins <a class="header-anchor" href="#2.-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE-jenkins">#</a></h2>
+<p>这里登录需要使用到一个管理员密码，我们可以在服务器上使用如下命令获得</p>
+<blockquote>
+<p>cat /var/lib/jenkins/secrets/initialAdminPassword</p>
+</blockquote>
+<ol>
+<li>更新Jenkins到最新版本</li>
+<li>安装插件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>插件</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Locale</td>
+<td>中文</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Localization: Chinese (Simplified)</td>
+<td>中文</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Localization Support</td>
+<td>中文</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Deploy to container Plugin</td>
+<td>打包镜像</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Publish over SSH</td>
+<td>推送镜像</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Gitea/Gitlab/Gitee/Github</td>
+<td>代码仓库</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Git</td>
+<td>拉取代码</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Git client</td>
+<td>拉取代码</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Maven Integration</td>
+<td>后端打包</td>
+</tr>
+<tr>
+<td>8</td>
+<td>NodeJS</td>
+<td>前端打包</td>
+</tr>
+</tbody>
+</table>
+<p><strong>暂时不要替换插件源，进入jenkins直接升级版本，升级到最高版本后，所有插件即可安装</strong></p>
+<p>如果安装很慢，可以先设置国内的插件源</p>
+<pre><code class="language-shell">systemctl stop jenkins
+vim /var/lib/jenkins/hudson.model.UpdateCenter.xml
+
+&lt;?xml version='1.1' encoding='UTF-8'?&gt;
+&lt;sites&gt;
+  &lt;site&gt;
+    &lt;id&gt;default&lt;/id&gt;
+    &lt;url&gt;http://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json&lt;/url&gt;
+  &lt;/site&gt;
+&lt;/sites&gt;
+<span class="hljs-meta">
+#</span><span class="bash"> 或在页面中Manage Jenkins–&gt;Manage Plugins点击Advanced后拉到最下面，将红色方框内的链接修为</span>
+http://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
+<span class="hljs-meta">
+#</span><span class="bash"> 重启jenkis</span>
+systemctl daemon-reload &amp;&amp; systemctl start jenkins
+<span class="hljs-meta">
+#</span><span class="bash"> 如果启动报错缺少policycoreutils-python，可以使用下面命令来解决</span>
+yum install -y curl policycoreutils-python openssh-server
+</code></pre>
+<h2 id="3.-%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98">3. 安装问题 <a class="header-anchor" href="#3.-%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98">#</a></h2>
+<ol>
+<li>更新版本</li>
+</ol>
+<blockquote>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/jenkins/war-stable/2.332.4/">https://mirrors.tuna.tsinghua.edu.cn/jenkins/war-stable/2.332.4/</a>
+下载最新war包。放入/usr/lib/jenkins/替换旧版war</p>
+</blockquote>
+<ol start="2">
+<li>安装jenkins后下载插件报错日志如下:</li>
+</ol>
+<pre><code class="language-shell">sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+        at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:145)
+        at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:131)
+        at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+        at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:382)
+Caused: sun.security.validator.ValidatorException: PKIX path building failed
+</code></pre>
+<p>原因:</p>
+<p>默认证书有问题</p>
+<p>解决:</p>
+<ol>
+<li>更新站点</li>
+</ol>
+<blockquote>
+<p><a href="http://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json">http://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json</a></p>
+</blockquote>
+<ol start="2">
+<li>进入jenkins站点更新目录修改默认json配置</li>
+</ol>
+<pre><code class="language-shell">cd /var/lib/jenkins/updates/
+
+全局替换default.json里面的下载插件地址:
+
+sed -i 's/http:\/\/updates.jenkins-ci.org\/download/http:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' default.json
+sed -i 's/http:\/\/www.google.com/http:\/\/www.baidu.com/g' default.json
+</code></pre>
+<ol start="3">
+<li>查找证书路径:</li>
+</ol>
+<blockquote>
+<p>find / -type f -name cacerts</p>
+</blockquote>
+<p>找到了上面的地址: /etc/pki/ca-trust/extracted/java/cacerts</p>
+<ol start="4">
+<li>修改jenkins配置文件</li>
+</ol>
+<blockquote>
+<p>vi /etc/sysconfig/jenkins
+JENKINS_JAVA_OPTIONS=&quot;-Djava.awt.headless=true -Djavax.net.ssl.trustStore=/etc/pki/ca-trust/extracted/java/cacerts&quot;</p>
+</blockquote>
+<ol start="5">
+<li>重启jenkins生效</li>
+</ol>
+<blockquote>
+<p>systemctl daemon-reload &amp;&amp; systemctl restart jenkins</p>
+</blockquote>
+<h2 id="4.-%E5%88%9B%E5%BB%BA%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1">4. 创建构建任务 <a class="header-anchor" href="#4.-%E5%88%9B%E5%BB%BA%E6%9E%84%E5%BB%BA%E4%BB%BB%E5%8A%A1">#</a></h2>
+<h3 id="1.-%E5%90%8E%E7%AB%AF%E6%89%93%E5%8C%85%E4%BB%BB%E5%8A%A1">1. 后端打包任务 <a class="header-anchor" href="#1.-%E5%90%8E%E7%AB%AF%E6%89%93%E5%8C%85%E4%BB%BB%E5%8A%A1">#</a></h3>
+<ol>
+<li>创建任务<code>New Item</code>，输入任务名称，选择<code>构建一个Maven项目</code>，点击确认</li>
+<li>描述中输入任务的描述信息: &quot;Spring Boot打包测试&quot;</li>
+<li>点击顶部<code>源码管理</code>选择 <code>Git</code>。</li>
+<li><code>Repository URL</code>中输入仓库地址 <code>http://113.57.121.225:3001/wwb/pi-diginn.git</code></li>
+<li>点击<code>Credentials</code>创建凭证（用户名密码，Token，SSH-Key等）</li>
+<li><code>Branches to build</code>中指定打包的分支</li>
+<li><code>源码库浏览器</code>选择对应的值<code>Gitea</code>，再次输入<code>Repository URL</code></li>
+<li><code>构建环境</code>选中<code>Add timestamps to the Console Output</code>，输出构建日志</li>
+<li><code>Pre-Steps</code>添加<code>Invoke top-level Maven targets</code>打包父工程。POM <code>pd-parent/pom.xml</code> Goals <code>clean install -Dmaven.test.skip=true</code></li>
+<li><code>Build</code>中指定当前构建的项目。POM <code>pd-service-admin/pom.xml</code> Goals <code>clean install -Dmaven.test.skip=true</code></li>
+<li><code>Post Steps</code>添加<code>Execute Shell</code>执行后续Shell脚本。选择 <code>Run only if build succeeds</code>仅当build成功执行</li>
+</ol>
+<h3 id="2.-%E5%90%8E%E7%AB%AF%E6%89%93%E5%8C%85%E8%84%9A%E6%9C%AC">2. 后端打包脚本 <a class="header-anchor" href="#2.-%E5%90%8E%E7%AB%AF%E6%89%93%E5%8C%85%E8%84%9A%E6%9C%AC">#</a></h3>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 定义变量</span>
+API_NAME="pd-service-admin"
+API_VERSION="1.0.0"
+API_PORT="31114"
+EXTERNAL_API_PORT="31114"
+IMAGE_NAME="192.168.137.101:5000/$API_NAME:$API_VERSION"
+CONTAINER_NAME=$API_NAME:$API_VERSION
+<span class="hljs-meta">
+#</span><span class="bash"> 进入target目录并复制Dockerfile文件</span>
+cd $WORKSPACE/$API_NAME/config
+cp Dockerfile ../target
+cd $WORKSPACE/$API_NAME/target
+
+echo '================构建Docker镜像=============='
+docker build -t $IMAGE_NAME .
+
+echo '================推送Docker镜像=============='
+docker login --username=admin --password=admin 192.168.137.101:5000
+docker push $IMAGE_NAME
+docker logout
+
+echo '================删除Docker容器=============='
+cid=$(docker ps -a | grep $API_NAME |awk '{print $1}')
+if [ x"$cid" != x ]
+    then
+    docker rm -f $cid
+fi
+
+echo '================启动Docker容器=============='
+docker run --restart=always --name=$API_NAME -d -p $API_PORT:$EXTERNAL_API_PORT $IMAGE_NAME
+
+echo '================删除Dockerfile=============='
+rm -f Dockerfile
+</code></pre>
+<p>使用私服仓库的脚本</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 定义变量</span>
+API_NAME="pd-service-admin"
+API_VERSION="4.0.0"
+API_PORT="31114"
+EXTERNAL_API_PORT="31114"
+IMAGE_NAME="192.168.137.102:5080/pi-diginn/$API_NAME:$API_VERSION"
+CONTAINER_NAME=$API_NAME:$API_VERSION
+<span class="hljs-meta">
+#</span><span class="bash"> 进入target目录并复制Dockerfile文件</span>
+cd $WORKSPACE/$API_NAME/config
+cp Dockerfile ../target
+cd $WORKSPACE/$API_NAME/target
+
+echo '================构建Docker镜像=============='
+docker build -t $IMAGE_NAME .
+
+echo '================推送Docker镜像=============='
+docker login 192.168.137.102:5080
+docker push $IMAGE_NAME
+docker logout
+
+echo '================删除Docker容器=============='
+cid=$(docker ps -a | grep $API_NAME |awk '{print $1}')
+if [ x"$cid" != x ]
+    then
+    docker rm -f $cid
+fi
+
+echo '================启动Docker容器=============='
+docker run --restart=always --name=$API_NAME -d -p $API_PORT:$EXTERNAL_API_PORT $IMAGE_NAME
+
+echo '================删除Dockerfile=============='
+rm -f Dockerfile
+</code></pre>
+<h3 id="3.-%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E4%BB%BB%E5%8A%A1">3. 前端打包任务 <a class="header-anchor" href="#3.-%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E4%BB%BB%E5%8A%A1">#</a></h3>
+<ol>
+<li>创建任务<code>New Item</code>，输入任务名称，选择<code>Freestyle project</code>，点击确认</li>
+<li>描述中输入任务的描述信息: &quot;Web前端打包测试&quot;</li>
+<li>点击顶部<code>源码管理</code>选择 <code>Git</code>。</li>
+<li><code>Repository URL</code>中输入仓库地址 <code>http://113.57.121.225:3001/wwb/pd-diginn-web.git</code></li>
+<li>点击<code>Credentials</code>创建凭证（用户名密码，Token，SSH-Key等）</li>
+<li><code>Branches to build</code>中指定打包的分支</li>
+<li><code>源码库浏览器</code>选择对应的值<code>Gitea</code>，再次输入<code>Repository URL</code></li>
+<li><code>构建环境</code>选中<code>Add timestamps to the Console Output</code>，输出构建日志</li>
+<li><code>构建环境</code>选择<code>Provide Node &amp; npm bin/ folder to PATH</code>指定使用的Node npm的位置</li>
+<li><code>Build</code>添加<code>Execute Shell</code>执行后续Shell脚本。选择 <code>Run only if build succeeds</code>仅当build成功执行</li>
+</ol>
+<h3 id="4.-%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E8%84%9A%E6%9C%AC">4. 前端打包脚本 <a class="header-anchor" href="#4.-%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E8%84%9A%E6%9C%AC">#</a></h3>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 查看Node和NPM版本</span>
+node -v
+npm -v
+<span class="hljs-meta">
+#</span><span class="bash"> 删除之前打包残留</span>
+rm -rf ./dist/
+<span class="hljs-meta">
+#</span><span class="bash"> 安装依赖</span>
+npm install
+npm install 'webpack@^4.0.0' -S
+<span class="hljs-meta">
+#</span><span class="bash"> 执行打包</span>
+npm run build
+<span class="hljs-meta">
+#</span><span class="bash"> 删除Nginx目录下的静态文件</span>
+rm -rf /usr/local/nginx/html/plum
+<span class="hljs-meta">#</span><span class="bash"> 将新的静态文件复制到Nginx目录下</span>
+cp -r dist/ /usr/local/nginx/html/plum
+<span class="hljs-meta">
+#</span><span class="bash"> 重启Nginx</span>
+systemctl restart nginx
+</code></pre>
+<p>使用私服的脚本</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 查看Node和NPM版本</span>
+node -v
+npm -v
+<span class="hljs-meta">
+#</span><span class="bash"> 删除之前打包残留</span>
+rm -rf ./dist/
+<span class="hljs-meta">
+#</span><span class="bash"> 安装依赖</span>
+npm install --registry=http://192.168.137.102:18081/repository/npm-public/
+npm install 'webpack@^4.0.0' -S --registry=http://192.168.137.102:18081/repository/npm-public/
+<span class="hljs-meta">
+#</span><span class="bash"> 执行打包</span>
+npm run build
+<span class="hljs-meta">
+#</span><span class="bash"> 删除Nginx目录下的静态文件</span>
+rm -rf /usr/local/nginx/html/plum
+<span class="hljs-meta">
+#</span><span class="bash"> 将新的静态文件复制到Nginx目录下</span>
+cp -r dist/ /usr/local/nginx/html/plum
+<span class="hljs-meta">
+#</span><span class="bash"> 重启Nginx</span>
+systemctl restart nginx
+</code></pre>
+</div></section><footer class="footer-container"><div class="footer-body"><img src="/light-docs/img/dubbo_gray.png"/><div class="cols-container"><div class="col col-12"><h3>免责声明</h3><p>免责声明的具体内容</p></div><div class="col col-6"><dl><dt>文档</dt><dd><a href="/light-docs/zh-cn/docs/demo1.html" target="_self">概览</a></dd><dd><a href="/light-docs/zh-cn/docs/demo2.html" target="_self">快速开始</a></dd><dd><a href="/light-docs/zh-cn/docs/dir/demo3.html" target="_self">开发者指南</a></dd></dl></div><div class="col col-6"><dl><dt>资源</dt><dd><a href="/light-docs/zh-cn/blog/index.html" target="_self">博客</a></dd><dd><a href="/light-docs/zh-cn/community/index.html" target="_self">社区</a></dd></dl></div></div><div class="copyright"><span>Copyright © 2018 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></div></div></footer></div></div>
+	<script src="https://f.alicdn.com/react/15.4.1/react-with-addons.min.js"></script>
+	<script src="https://f.alicdn.com/react/15.4.1/react-dom.min.js"></script>
+	<script>
+		window.rootPath = '/light-docs';
+  </script>
+	<script src="/light-docs/build/documentation.js"></script>
+</body>
+</html>
