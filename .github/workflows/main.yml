@@ -32,18 +32,29 @@ jobs:
           npm install 
           docsite build
       
-      # 2、部署到 GitHub Pages
+      # 2、 复制到新分支
+      - name: Copy To Branches Action
+        uses: planetoftheweb/copy-to-branches@v1
+        env:
+          # 来源分支
+          key: master
+          # 目标分支 branch1 branch2
+          branches: site
+          # 要复制的文件 folder1 file1
+          files: en-us img md_json zh-cn 404.html index.html
+
+      # 3、部署到 GitHub Pages
       - name: Deploy
         # https://github.com/JamesIves/github-pages-deploy-action
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: lorchr/light-docs
+          # repository-name: lorchr/light-docs
           branch: site
-          # 注意这里的 en-us 是仓库根目录下的 en-us npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
-          folder: en-us,zh-cn,img,md_json,404.html,index.html
-      
-      # 3、同步到 gitee 的仓库
+          # npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
+          # folder: en-us
+
+      # 4、同步到 gitee 的仓库
       # - name: Sync to Gitee
       #   uses: wearerequired/git-mirror-action@master
       #   env:
@@ -55,7 +66,7 @@ jobs:
       #     # 注意替换为你的 Gitee 目标仓库地址
       #     destination-repo: git@gitee.com:lorchr/light-docs.git
       
-      # 4、部署到 Gitee Pages
+      # 5、部署到 Gitee Pages
       # - name: Build Gitee Pages
       #   uses: yanglbme/gitee-pages-action@main
       #   with:
@@ -68,7 +79,7 @@ jobs:
       #     # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
       #     branch: site
       
-      # 5、部署到 lorchr.top 服务器
+      # 6、部署到 lorchr.top 服务器
       # - name: rsync deployments
       #   uses: burnett01/rsync-deployments@4.1
       #   with:

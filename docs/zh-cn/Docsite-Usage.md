@@ -232,9 +232,9 @@ jobs:
       # 1、生成静态文件
       - name: Install And Build
         run: |
-        npm install docsite -g 
-        npm install 
-        docsite build
+          npm install docsite -g 
+          npm install 
+          docsite build
       
       # 2、部署到 GitHub Pages
       - name: Deploy
@@ -252,5 +252,7 @@ jobs:
    在 `GitHub 主页` -> `个人头像` -> `Settings` -> `Developer settings` -> `Personal access tokens` 进行生成或更新
 3. 配置秘钥
    `代码仓库`->`Settinigs`->`Secrets`->`Actions`->`New repository secret`填上对应的`key-value`
+4. 推送代码
+5. 在`Actions`中查看执行的结果
 
 ### Gitee Pages
