@@ -28,7 +28,8 @@ jobs:
       # 1、生成静态文件
       - name: Install And Build
         run: |
-          npm install docsite -g 
+          npm install docsite -g
+          npm install gulp -g
           npm install 
           docsite build
 
