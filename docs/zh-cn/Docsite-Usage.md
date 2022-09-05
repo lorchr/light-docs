@@ -189,3 +189,68 @@ location /light-docs/ {
 
 error_page  404  /home/lorchr/light-docs/404.html;
 ```
+
+### Github Pages
+
+- [教程](https://www.ruanyifeng.com/blog/2020/08/rsync.html)
+- [GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+- [GitHub Actions 官方文档](https://docs.github.com/en/actions)
+- [GitHub Actions 官方插件市场](https://github.com/marketplace?type=actions)
+- [awesome-actions](https://github.com/sdras/awesome-actions)
+- [GitHub Actions 教程：定时发送天气邮件](http://www.ruanyifeng.com/blog/2019/12/github_actions.html)
+
+1. 编写 `.github/workflows/github-pages.yml`
+
+```yaml
+name: Deploy GitHub Pages
+# 触发条件：在 push 到 master 分支后
+on:
+  push:
+    branches:
+      - master
+
+# 任务
+jobs:
+  build-and-deploy:
+    # 服务器环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # 使用 JamesIves/github-pages-deploy-action@releases/v4 脚本需要的配置
+          persist-credentials: false
+
+      # 设置Node环境
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      # 1、生成静态文件
+      - name: Install And Build
+        run: |
+        npm install docsite -g 
+        npm install 
+        docsite build
+      
+      # 2、部署到 GitHub Pages
+      - name: Deploy
+        # https://github.com/JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository-name: lorchr/light-docs
+          branch: site
+          # 注意这里的 en-us 是仓库根目录下的 en-us npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
+          folder: en-us,zh-cn,img,md_json,404.html,index.html
+```
+
+2. [生成秘钥](https://docs.github.com/cn/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+   在 `GitHub 主页` -> `个人头像` -> `Settings` -> `Developer settings` -> `Personal access tokens` 进行生成或更新
+3. 配置秘钥
+   `代码仓库`->`Settinigs`->`Secrets`->`Actions`->`New repository secret`填上对应的`key-value`
+
+### Gitee Pages
