@@ -230,15 +230,15 @@ error_page  404  /home/lorchr/light-docs/404.html;
 </code></pre>
 <h3 id="github-pages">Github Pages <a class="header-anchor" href="#github-pages">#</a></h3>
 <ul>
-<li><a href="https://www.ruanyifeng.com/blog/2020/08/rsync.html">教程</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">GitHub Actions 入门教程</a></li>
 <li><a href="https://docs.github.com/en/actions">GitHub Actions 官方文档</a></li>
 <li><a href="https://github.com/marketplace?type=actions">GitHub Actions 官方插件市场</a></li>
-<li><a href="https://github.com/sdras/awesome-actions">awesome-actions</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2019/12/github_actions.html">GitHub Actions 教程：定时发送天气邮件</a></li>
+<li><a href="https://github.com/sdras/awesome-actions">Awesome-Actions 插件市场</a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2020/08/rsync.html">阮一峰-rsync 用法教程</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">阮一峰-GitHub Actions 入门教程</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2019/12/github_actions.html">阮一峰-GitHub Actions 定时发送天气邮件</a></li>
 </ul>
 <ol>
-<li>编写 <code>.github/workflows/github-pages.yml</code></li>
+<li>编写 <code>.github/workflows/main.yml</code></li>
 </ol>
 <pre><code class="language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Pages</span>
 <span class="hljs-comment"># 触发条件：在 push 到 master 分支后</span>
@@ -255,33 +255,33 @@ error_page  404  /home/lorchr/light-docs/404.html;
     <span class="hljs-attr">steps:</span>
       <span class="hljs-comment"># 拉取代码</span>
       <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span>
-        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v3</span>
         <span class="hljs-attr">with:</span>
           <span class="hljs-comment"># 使用 JamesIves/github-pages-deploy-action@releases/v4 脚本需要的配置</span>
           <span class="hljs-attr">persist-credentials:</span> <span class="hljs-literal">false</span>
 
       <span class="hljs-comment"># 设置Node环境</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-number">12.</span><span class="hljs-string">x</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-number">11.</span><span class="hljs-string">x</span>
         <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v3</span>
         <span class="hljs-attr">with:</span>
-          <span class="hljs-attr">node-version:</span> <span class="hljs-string">'12.x'</span>
+          <span class="hljs-attr">node-version:</span> <span class="hljs-string">'11.x'</span>
           <span class="hljs-attr">registry-url:</span> <span class="hljs-string">'https://registry.npmjs.org'</span>
 
       <span class="hljs-comment"># 1、生成静态文件</span>
       <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">And</span> <span class="hljs-string">Build</span>
         <span class="hljs-attr">run:</span> <span class="hljs-string">|
-          npm install docsite -g 
+          npm install docsite -g
           npm install 
           docsite build
 </span>
       <span class="hljs-comment"># 2、复制文件到Dist</span>
-      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Copy</span> <span class="hljs-string">to</span> <span class="hljs-string">dist</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Copy</span> <span class="hljs-string">to</span> <span class="hljs-string">Dist</span>
         <span class="hljs-attr">run:</span> <span class="hljs-string">|
           echo "========== Copy Files Start =========="
           mkdir         ./dist/
           mv build      ./dist/
-          mv en-us      ./dist/ 
-          mv zh-cn      ./dist/ 
+          mv en-us      ./dist/
+          mv zh-cn      ./dist/
           mv img        ./dist/
           mv 404.html   ./dist/
           mv index.html ./dist/
