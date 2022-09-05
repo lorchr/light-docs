@@ -31,6 +31,9 @@ jobs:
           npm install docsite -g 
           npm install 
           docsite build
+
+      # 2、复制文件到Dist
+      - name: Copy to dist
       - run:
           echo "========== Copy Files Start =========="
           mkdir         ./dist/
@@ -40,18 +43,7 @@ jobs:
           mv img        ./dist/
           mv 404.html   ./dist/
           mv index.html ./dist/
-           echo "========== Copy Files End =========="
-
-      # 2、 复制到新分支
-      # - name: Copy To Branches Action
-      #   uses: planetoftheweb/copy-to-branches@v1
-      #   env:
-      #     # 来源分支
-      #     key: master
-      #     # 目标分支 branch1 branch2
-      #     branches: site
-      #     # 要复制的文件 folder1 file1
-      #     files: en-us img md_json zh-cn 404.html index.html
+          echo "========== Copy Files End =========="
 
       # 3、部署到 GitHub Pages
       - name: Deploy
