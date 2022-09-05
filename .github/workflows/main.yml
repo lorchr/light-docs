@@ -52,7 +52,7 @@ jobs:
           # repository-name: lorchr/light-docs
           branch: site
           # npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
-          # folder: en-us
+          folder: en-us
 
       # 4、同步到 gitee 的仓库
       # - name: Sync to Gitee
