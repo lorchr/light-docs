@@ -192,14 +192,14 @@ error_page  404  /home/lorchr/light-docs/404.html;
 
 ### Github Pages
 
-- [教程](https://www.ruanyifeng.com/blog/2020/08/rsync.html)
-- [GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 - [GitHub Actions 官方文档](https://docs.github.com/en/actions)
 - [GitHub Actions 官方插件市场](https://github.com/marketplace?type=actions)
-- [awesome-actions](https://github.com/sdras/awesome-actions)
-- [GitHub Actions 教程：定时发送天气邮件](http://www.ruanyifeng.com/blog/2019/12/github_actions.html)
+- [Awesome-Actions 插件市场](https://github.com/sdras/awesome-actions)
+- [阮一峰-rsync 用法教程](https://www.ruanyifeng.com/blog/2020/08/rsync.html)
+- [阮一峰-GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+- [阮一峰-GitHub Actions 定时发送天气邮件](http://www.ruanyifeng.com/blog/2019/12/github_actions.html)
 
-1. 编写 `.github/workflows/github-pages.yml`
+1. 编写 `.github/workflows/main.yml`
 
 ```yaml
 name: Deploy GitHub Pages
@@ -217,33 +217,33 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # 使用 JamesIves/github-pages-deploy-action@releases/v4 脚本需要的配置
           persist-credentials: false
 
       # 设置Node环境
-      - name: Use Node.js 12.x
+      - name: Use Node.js 11.x
         uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: '11.x'
           registry-url: 'https://registry.npmjs.org'
 
       # 1、生成静态文件
       - name: Install And Build
         run: |
-          npm install docsite -g 
+          npm install docsite -g
           npm install 
           docsite build
 
       # 2、复制文件到Dist
-      - name: Copy to dist
+      - name: Copy to Dist
         run: |
           echo "========== Copy Files Start =========="
           mkdir         ./dist/
           mv build      ./dist/
-          mv en-us      ./dist/ 
-          mv zh-cn      ./dist/ 
+          mv en-us      ./dist/
+          mv zh-cn      ./dist/
           mv img        ./dist/
           mv 404.html   ./dist/
           mv index.html ./dist/

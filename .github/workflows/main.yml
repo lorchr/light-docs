@@ -13,7 +13,7 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # 使用 JamesIves/github-pages-deploy-action@releases/v4 脚本需要的配置
           persist-credentials: false
@@ -28,17 +28,14 @@ jobs:
       # 1、生成静态文件
       - name: Install And Build
         run: |
-          gulp -v
-          node -v
           npm install docsite -g
           npm install 
           docsite build
 
       # 2、复制文件到Dist
-      - name: Copy to dist
+      - name: Copy to Dist
         run: |
           echo "========== Copy Files Start =========="
-          ls
           mkdir         ./dist/
           mv build      ./dist/
           mv en-us      ./dist/
