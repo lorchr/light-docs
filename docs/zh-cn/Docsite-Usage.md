@@ -141,10 +141,8 @@ pages:
 ## 六、使用-社区
 
 ## 七、部署
-1. 打包文件
-> docsite build
 
-2. 将生成的文档推送到新分支上
+将生成的文档推送到新分支上
 ```shell
 # 创建新分支
 git branch site
@@ -166,7 +164,11 @@ git remote set-url --add origin https://github.com/lorchr/light-docs.git
 git push
 ```
 
-3. 提取生成的文件
+### 1. 部署到服务器
+1. 打包文件
+> docsite build
+
+2. 提取生成的文件
 
 | 序号 | 文件或文件夹 | 作用       |
 | ---- | ------------ | ---------- |
@@ -177,9 +179,9 @@ git push
 | 5    | index.html   | 首页       |
 | 6    | 404.html     | 404页      |
 
-4. 将文档上传到Gitee,在`服务-GiteePages`中选择要部署的分支
-5. 将文档上传到Github,在`Settings-GitHuo Pages`中选择要部署的分支
-6. 将文档上传到Nginx并配置访问路径
+3. 将文档上传到服务器
+
+4. 将文档上传到Nginx并配置访问路径
 
 ```conf
 location /light-docs/ {
@@ -190,7 +192,7 @@ location /light-docs/ {
 error_page  404  /home/lorchr/light-docs/404.html;
 ```
 
-### Github Pages
+### 2. Github Pages
 
 - [GitHub Actions 官方文档](https://docs.github.com/en/actions)
 - [GitHub Actions 官方插件市场](https://github.com/marketplace?type=actions)
