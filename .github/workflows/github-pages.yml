@@ -28,9 +28,9 @@ jobs:
       # 1、生成静态文件
       - name: Install And Build
         run: |
-        npm install docsite -g 
-        npm install 
-        docsite build
+          npm install docsite -g 
+          npm install 
+          docsite build
       
       # 2、部署到 GitHub Pages
       - name: Deploy
