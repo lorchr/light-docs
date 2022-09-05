@@ -19,17 +19,18 @@ jobs:
           persist-credentials: false
 
       # 设置Node环境
-      - name: Use Node.js 12.x
+      - name: Use Node.js 11.x
         uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: '11.x'
           registry-url: 'https://registry.npmjs.org'
 
       # 1、生成静态文件
       - name: Install And Build
         run: |
+          gulp -v
+          node -v
           npm install docsite -g
-          npm install gulp -g
           npm install 
           docsite build
 
