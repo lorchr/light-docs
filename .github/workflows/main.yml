@@ -33,27 +33,28 @@ jobs:
           docsite build
       
       # 2、 复制到新分支
-      - name: Copy To Branches Action
-        uses: planetoftheweb/copy-to-branches@v1
-        env:
-          # 来源分支
-          key: master
-          # 目标分支 branch1 branch2
-          branches: site
-          # 要复制的文件 folder1 file1
-          files: en-us img md_json zh-cn 404.html index.html
+#       - name: Copy To Branches Action
+#         uses: planetoftheweb/copy-to-branches@v1
+#         env:
+#           # 来源分支
+#           key: master
+#           # 目标分支 branch1 branch2
+#           branches: site
+#           # 要复制的文件 folder1 file1
+#           files: en-us img md_json zh-cn 404.html index.html
 
       # 3、部署到 GitHub Pages
-#       - name: Deploy
-#         # https://github.com/JamesIves/github-pages-deploy-action
-#         uses: JamesIves/github-pages-deploy-action@releases/v4
-#         with:
-#           token: ${{ secrets.ACCESS_TOKEN }}
-#           # repository-name: lorchr/light-docs
-#           branch: site
-#           # npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
-#           folder: en-us
-#           target-folder: en-us
+      - name: Deploy
+        # https://github.com/JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          # repository-name: lorchr/light-docs
+          branch: site
+          # npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
+          folder: en-us
+          target-folder: .
+          clean: blog docs node_modules
 
       # 4、同步到 gitee 的仓库
       # - name: Sync to Gitee
