@@ -53,6 +53,18 @@ jobs:
           branch: site
           # npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
           folder: en-us
+          target-folder: en-us
+
+      # 2、 复制到新分支
+      - name: Copy To Branches
+        uses: planetoftheweb/copy-to-branches@v1
+        env:
+          # 来源分支
+          key: master
+          # 目标分支 branch1 branch2
+          branches: site
+          # 要复制的文件 folder1 file1
+          files: en-us img md_json zh-cn 404.html index.html
 
       # 4、同步到 gitee 的仓库
       # - name: Sync to Gitee
