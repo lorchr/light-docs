@@ -217,26 +217,39 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           # 使用 JamesIves/github-pages-deploy-action@releases/v4 脚本需要的配置
           persist-credentials: false
 
       # 设置Node环境
       - name: Use Node.js 12.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
 
       # 1、生成静态文件
-      - name: Install and Build
-        run: |
+      - name: Install And Build
+      - run: |
           npm install docsite -g 
           npm install 
           docsite build
-      
-      # 2、部署到 GitHub Pages
+
+      # 2、复制文件到Dist
+      - name: Copy to dist
+      - run:
+          echo "========== Copy Files Start =========="
+          mkdir         ./dist/
+          mv build      ./dist/
+          mv en-us      ./dist/ 
+          mv zh-cn      ./dist/ 
+          mv img        ./dist/
+          mv 404.html   ./dist/
+          mv index.html ./dist/
+          echo "========== Copy Files End =========="
+
+      # 3、部署到 GitHub Pages
       - name: Deploy
         # https://github.com/JamesIves/github-pages-deploy-action
         uses: JamesIves/github-pages-deploy-action@releases/v4
@@ -245,17 +258,7 @@ jobs:
           # repository-name: lorchr/light-docs
           branch: site
           # npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
-          folder: en-us
-          target-folder: en-us
-
-      - name: Push
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: build # The branch name where you want to push the assets
-          FOLDER: build # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-          MESSAGE: "Build: ({sha}) {msg}" # The commit message
+          folder: dist
 ```
 
 2. [生成秘钥](https://docs.github.com/cn/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
