@@ -1,0 +1,6 @@
+{
+  "filename": "02-Install-NodeJS.md",
+  "__html": "<h1 id=\"%E4%BA%8C%E3%80%81-%E5%AE%89%E8%A3%85-nodejs\">二、 安装 NodeJS <a class=\"header-anchor\" href=\"#%E4%BA%8C%E3%80%81-%E5%AE%89%E8%A3%85-nodejs\">#</a></h1>\n<p>全局设置配置nodejs，起名jenkins-nodes12.18</p>\n<pre><code class=\"language-shell\"><span class=\"hljs-meta\">#</span><span class=\"bash\"> 下载安装包</span>\nwget https://nodejs.org/dist/v12.18.0/node-v12.18.0-linux-x64.tar.gz\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"> 创建安装目录</span>\nmkdir /usr/local/node\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"> 解压</span>\ntar -zxvf node-v12.18.0-linux-x64.tar.gz -C /usr/local/node/\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"> 设置环境变量</span>\ncat &gt;&gt; /etc/profile &lt;&lt; EOF\n<span class=\"hljs-meta\">#</span><span class=\"bash\"> Node Enviroment</span>\nNODE_HOME=/usr/local/node/node-v12.18.0-linux-x64\nPATH=$NODE_HOME/bin:$PATH\nexport NODE_HOME PATH\nEOF\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"> 刷新配置</span>\nsource /etc/profile\n<span class=\"hljs-meta\">\n#</span><span class=\"bash\"> 重命名</span>\nmv node-v12.18.0-linux-x64 jenkins-nodes12.18\n</code></pre>\n",
+  "link": "/en-us/docs/CI-CD/02-Install-NodeJS.html",
+  "meta": {}
+}
