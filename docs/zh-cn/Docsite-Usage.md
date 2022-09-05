@@ -217,7 +217,7 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # 使用 JamesIves/github-pages-deploy-action@releases/v4 脚本需要的配置
           persist-credentials: false
@@ -230,7 +230,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       # 1、生成静态文件
-      - name: Install And Build
+      - name: Install and Build
         run: |
           npm install docsite -g 
           npm install 
@@ -242,10 +242,20 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: lorchr/light-docs
+          # repository-name: lorchr/light-docs
           branch: site
-          # 注意这里的 en-us 是仓库根目录下的 en-us npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
-          folder: en-us,zh-cn,img,md_json,404.html,index.html
+          # npm run build 生成静态资源的路径，比如有的人是 `docs/.vuepress/dist`
+          folder: en-us
+          target-folder: en-us
+
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: build # The branch name where you want to push the assets
+          FOLDER: build # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
 ```
 
 2. [生成秘钥](https://docs.github.com/cn/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
