@@ -231,14 +231,14 @@ jobs:
 
       # 1、生成静态文件
       - name: Install And Build
-      run: |
+        run: |
           npm install docsite -g 
           npm install 
           docsite build
 
       # 2、复制文件到Dist
       - name: Copy to dist
-      run: |
+        run: |
           echo "========== Copy Files Start =========="
           mkdir         ./dist/
           mv build      ./dist/
