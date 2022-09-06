@@ -5,8 +5,20 @@ export default {
         title: 'Light Docs',
         children: [
           {
+            title: 'Overview',
+            link: '/en-us/docs/site/Overview.html',
+          },
+          {
+            title: 'Quick Start',
+            link: '/en-us/docs/site/Quick-Start.html',
+          },
+          {
+            title: 'Developer Guide',
+            link: '/en-us/docs/site/Developer-Guide.html',
+          },
+          {
             title: 'Docsite Usage',
-            link: '/en-us/docs/Docsite-Usage.html',
+            link: '/en-us/docs/single/Docsite-Usage.html',
           },
           {
             title: 'Spring Boot',
@@ -27,7 +39,7 @@ export default {
                 link: '/en-us/docs/Spring-Cloud/Spring-Cloud.html',
               },
             ],
-          },
+          }, 
           {
             title: 'Spring Security',
             opened: false,
@@ -97,8 +109,20 @@ export default {
         title: 'Light Docs',
         children: [
           {
+            title: '概览',
+            link: '/zh-cn/docs/site/Overview.html',
+          },
+          {
+            title: '快速开始',
+            link: '/zh-cn/docs/site/Quick-Start.html',
+          },
+          {
+            title: '开发指南',
+            link: '/zh-cn/docs/site/Developer-Guide.html',
+          },
+          {
             title: 'Docsite 使用',
-            link: '/zh-cn/docs/Docsite-Usage.html',
+            link: '/zh-cn/docs/single/Docsite-Usage.html',
           },
           {
             title: 'Spring Boot',
