@@ -3,17 +3,17 @@ import React from 'react';
 export default {
   'zh-cn': {
     brand: {
-      brandName: '开源产品品牌名称',
-      briefIntroduction: '关于开源产品的简单介绍',
+      brandName: 'Torch',
+      briefIntroduction: 'Torch, Light the world!',
       buttons: [
         {
           text: '立即开始',
-          link: '/zh-cn/docs/Docsite-Usage.html',
+          link: '/zh-cn/docs/Quick-Start.html',
           type: 'primary',
         },
         {
           text: '查看Github',
-          link: '',
+          link: 'https://github.com/lorchr/light-docs',
           type: 'normal',
         },
       ],
@@ -64,7 +64,7 @@ export default {
       img: '/img/quick_start.png',
       button: {
         text: '阅读更多',
-        link: '/zh-cn/docs/Docsite-Usage.html',
+        link: '/zh-cn/docs/site/Read-More.html',
       },
     },
     users: {
@@ -92,17 +92,17 @@ export default {
   },
   'en-us': {
     brand: {
-      brandName: 'brandName',
-      briefIntroduction: 'some description of product',
+      brandName: 'Torch',
+      briefIntroduction: 'Torch, Light the world!',
       buttons: [
         {
           text: 'Quick Start',
-          link: '/en-us/docs/Docsite-Usage.html',
+          link: '/en-us/docs/site/Quick-Start.html',
           type: 'primary',
         },
         {
           text: 'View on Github',
-          link: '',
+          link: 'https://github.com/lorchr/light-docs',
           type: 'normal',
         },
       ],
@@ -153,7 +153,7 @@ export default {
       img: '/img/quick_start.png',
       button: {
         text: 'READ MORE',
-        link: '/en-us/docs/Docsite-Usage.html',
+        link: '/en-us/docs/site/Read-More.html',
       },
     },
     users: {
