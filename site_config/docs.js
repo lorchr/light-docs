@@ -122,7 +122,37 @@ export default {
           },
           {
             title: 'Docsite 使用',
-            link: '/zh-cn/docs/single/Docsite-Usage.html',
+            link: '/zh-cn/docs/single/00-Docsite-Usage.html',
+          },
+          {
+            title: '开发环境',
+            opened: false,
+            children: [
+              {
+                title: '总览',
+                link: '/zh-cn/docs/devenv/DevEnv.html',
+              },
+              {
+                title: 'Mysql',
+                link: '/zh-cn/docs/devenv/Docker-Mysql.html',
+              },
+              {
+                title: 'Pgsql',
+                link: '/zh-cn/docs/devenv/Docker-Pgsql.html',
+              },
+              {
+                title: 'Redis',
+                link: '/zh-cn/docs/devenv/Docker-Redis.html',
+              },
+              {
+                title: 'InfluxDB',
+                link: '/zh-cn/docs/devenv/Docker-InfluxDB.html',
+              },
+              {
+                title: 'EMQX',
+                link: '/zh-cn/docs/devenv/Docker-EMQX.html',
+              },
+            ],
           },
           {
             title: 'Spring Boot',
@@ -197,8 +227,12 @@ export default {
             opened: false,
             children: [
               {
-                title: 'K8s 单Master集群',
+                title: 'K8s单Master集群',
                 link: '/zh-cn/docs/K8s/K8s-Single-Master-Cluster.html',
+              },
+              {
+                title: '使用Rancher搭建K8s集群',
+                link: '/zh-cn/docs/K8s/Use-Rancher-build-K8s-Cluster.html',
               },
             ],
           },
