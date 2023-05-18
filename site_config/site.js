@@ -74,7 +74,7 @@ export default {
       {
         key: 'docs',
         text: '文档',
-        link: '/zh-cn/docs/Docsite-Usage.html',
+        link: '/zh-cn/docs/single/00-Docsite-Usage.html',
       },
       {
         key: 'blog',
