@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="Use-Rancher-build-K8s-Cluster" />
+	<meta name="description" content="Use-Rancher-build-K8s-Cluster" />
+	<!-- 网页标签标题 -->
+	<title>Use-Rancher-build-K8s-Cluster</title>
+	<link rel="shortcut icon" href="/light-docs/img/docsite.ico"/>
+	<link rel="stylesheet" href="/light-docs/build/documentation.css" />
+</head>
+<body>
+	<div id="root"><div class="documentation-page" data-reactroot=""><header class="header-container header-container-normal"><div class="header-body"><a href="/light-docs/zh-cn/index.html"><img class="logo" src="/light-docs/img/dubbo_colorful.png"/></a><div class="search search-normal"><span class="icon-search"></span></div><span class="language-switch language-switch-normal">En</span><div class="header-menu"><img class="header-menu-toggle" src="/light-docs/img/system/menu_gray.png"/><ul><li class="menu-item menu-item-normal"><a href="/light-docs/zh-cn/index.html" target="_self">首页</a></li><li class="menu-item menu-item-normal menu-item-normal-active"><a href="/light-docs/zh-cn/docs/single/00-Docsite-Usage.html" target="_self">文档</a></li><li class="menu-item menu-item-normal"><a href="/light-docs/zh-cn/blog/index.html" target="_self">博客</a></li><li class="menu-item menu-item-normal"><a href="/light-docs/zh-cn/community/index.html" target="_self">社区</a></li></ul></div></div></header><div class="bar"><div class="bar-body"><img src="/light-docs/img/system/docs.png" class="front-img"/><span>文档</span><img src="/light-docs/img/system/docs.png" class="back-img"/></div></div><section class="content-section"><div class="sidemenu"><div class="sidemenu-toggle"><img src="https://img.alicdn.com/tfs/TB1E6apXHGYBuNjy0FoXXciBFXa-200-200.png"/></div><ul><li class="menu-item menu-item-level-1"><span>Light Docs</span><ul><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><a href="/light-docs/zh-cn/docs/site/Overview.html" target="_self">概览</a></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><a href="/light-docs/zh-cn/docs/site/Quick-Start.html" target="_self">快速开始</a></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><a href="/light-docs/zh-cn/docs/site/Developer-Guide.html" target="_self">开发指南</a></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><a href="/light-docs/zh-cn/docs/single/00-Docsite-Usage.html" target="_self">Docsite 使用</a></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>开发环境<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/devenv/DevEnv.html" target="_self">总览</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/devenv/Docker-Mysql.html" target="_self">Mysql</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/devenv/Docker-Pgsql.html" target="_self">Pgsql</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/devenv/Docker-Redis.html" target="_self">Redis</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/devenv/Docker-InfluxDB.html" target="_self">InfluxDB</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/devenv/Docker-EMQX.html" target="_self">EMQX</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>Spring Boot<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/Spring-Boot/Spring-Boot.html" target="_self">Spring Boot</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>Spring Cloud<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/Spring-Cloud/Spring-Cloud.html" target="_self">Spring Cloud</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>Spring Security<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/Spring-Security/Spring-Security.html" target="_self">Spring Security</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>CI/CD<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/01-Install-JDK.html" target="_self">Install JDK</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/02-Install-NodeJS.html" target="_self">Install NodeJS</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/03-Install-Maven.html" target="_self">Install Maven</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/04-Install-Gitea.html" target="_self">Install Gitea</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/05-Install-Nexus3.html" target="_self">Install Nexus3</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/06-Install-Jenkins.html" target="_self">Install Jenkins</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/07-Install-Docker Registry.html" target="_self">Install Docker Registry</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/CI-CD/08-Install-Harbor.html" target="_self">Install Harbor</a></li></ul></li><li style="height:36px;overflow:hidden" class="menu-item menu-item-level-2"><span>K8s<img style="transform:rotate(-90deg)" class="menu-toggle" src="/light-docs/img/system/arrow_down.png"/></span><ul><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/K8s/K8s-Single-Master-Cluster.html" target="_self">K8s单Master集群</a></li><li class="menu-item menu-item-level-3"><a href="/light-docs/zh-cn/docs/K8s/Use-Rancher-build-K8s-Cluster.html" target="_self">使用Rancher搭建K8s集群</a></li></ul></li></ul></li></ul></div><div class="doc-content markdown-body"><p><a href="https://blog.csdn.net/cqconelin/article/details/130056661">使用Rancher搭建K8s集群</a></p>
+<h1 id="%E4%B8%80%E3%80%81%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE">一、集群配置 <a class="header-anchor" href="#%E4%B8%80%E3%80%81%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE">#</a></h1>
+<ul>
+<li>Rancher version: 2.6.3</li>
+<li>Server:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>CPU</th>
+<th>Memory</th>
+<th>Disk</th>
+<th>OS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k8s-master</td>
+<td>16 Core</td>
+<td>16G</td>
+<td>80G</td>
+<td>CentOS 7.5</td>
+</tr>
+<tr>
+<td>k8s-node-1</td>
+<td>16 Core</td>
+<td>16G</td>
+<td>80G</td>
+<td>CentOS 7.5</td>
+</tr>
+<tr>
+<td>k8s-node-2</td>
+<td>16 Core</td>
+<td>16G</td>
+<td>80G</td>
+<td>CentOS 7.5</td>
+</tr>
+</tbody>
+</table>
+<h1 id="%E4%BA%8C%E3%80%81%E7%8E%AF%E5%A2%83%E5%88%9D%E5%A7%8B%E5%8C%96">二、环境初始化 <a class="header-anchor" href="#%E4%BA%8C%E3%80%81%E7%8E%AF%E5%A2%83%E5%88%9D%E5%A7%8B%E5%8C%96">#</a></h1>
+<ol>
+<li>
+<p>将桥接的IPv4流量传递到iptables的链，并修改 <code>/etc/sysctl.conf</code></p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 修改/etc/sysctl.conf</span>
+cat &gt; /etc/sysctl.conf &lt;&lt; EOF
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+<span class="hljs-meta">
+#</span><span class="bash"> 生效，如果报错可以在docker安装完成后再执行改命令</span>
+sysctl -p /etc/sysctl.conf
+</code></pre>
+</li>
+<li>
+<p>关闭防火墙和Swap分区</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 关闭防火墙</span>
+systemctl stop firewalld &amp;&amp; systemctl disable firewalld
+<span class="hljs-meta">#</span><span class="bash"> 关闭selinux</span>
+sed -i 's/enforcing/disabled/' /etc/selinux/config &amp;&amp; setenforce 0 # 永久
+<span class="hljs-meta">#</span><span class="bash"> 看/etc/selinux/config文件中SELINUX=disabled 即可</span>
+sed -i 's/permissive/disabled/' /etc/selinux/config &amp;&amp; setenforce 0
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># 关闭swap</span></span>
+swapoff -a &amp;&amp; sed -ri 's/.*swap.*/#&amp;/' /etc/fstab
+</code></pre>
+</li>
+<li>
+<p>时间同步</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 时间同步</span>
+yum install ntpdate -y
+ntpdate time.windows.com
+</code></pre>
+</li>
+<li>
+<p>设置服务器节点名称</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 设置服务器节点名称</span>
+hostnamectl set-hostname k8s-master
+bash
+</code></pre>
+</li>
+</ol>
+<h1 id="%E4%B8%89%E3%80%81docker%E5%AE%89%E8%A3%85">三、Docker安装 <a class="header-anchor" href="#%E4%B8%89%E3%80%81docker%E5%AE%89%E8%A3%85">#</a></h1>
+<ol>
+<li>
+<p>删除已存在的Docker</p>
+<pre><code class="language-shell">yum remove docker \
+    docker-client \
+    docker-client-latest \
+    docker-common \
+    docker-latest \
+    docker-latest-logrotate \
+    docker-logrotate \
+    docker-selinux \
+    docker-engine-selinux \
+    docker-engine
+</code></pre>
+</li>
+<li>
+<p>配置repo源和epel源</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 先备份原来的源</span>
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 下载新的 CentOS-Base.repo 到 /etc/yum.repos.d/
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+或
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+<span class="hljs-meta">#</span><span class="bash"> 运行 yum makecache 生成缓存</span>
+yum makecache 
+<span class="hljs-meta">#</span><span class="bash"> 安装epel源</span>
+yum -y install epel-release
+yum的'--showduplicates'选项对于显示软件包的多个版本很有用。当您有非常特定的依赖项并尝试查找要
+安装的软件包的特定名称时，它将起着非常大的作用
+<span class="hljs-meta">#</span><span class="bash"> yum list docker --show-duplicates</span>
+</code></pre>
+</li>
+<li>
+<p>安装依赖</p>
+<pre><code class="language-shell">yum -y install yum-utils device-mapper-persistent-data lvm2
+</code></pre>
+</li>
+<li>
+<p>添加Docker源</p>
+<pre><code class="language-shell">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre>
+</li>
+<li>
+<p>安装Docker</p>
+<pre><code class="language-shell">yum makecache fast
+yum -y install docker-ce-19.03.15-3.el7
+</code></pre>
+</li>
+<li>
+<p>配置Docker</p>
+<p>可参考<a href="https://www.cnblogs.com/myitnews/p/11509546.html">阿里云镜像加速配置</a></p>
+<pre><code class="language-shell">mkdir -p /etc/docker/
+cat &gt; /etc/docker/daemon.json &lt;&lt; EOF
+{
+"registry-mirrors": ["https://9cpn8tt6.mirror.aliyuncs.com"]
+}
+EOF
+</code></pre>
+</li>
+<li>
+<p>启动docker</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> 添加开启启动</span>
+systemctl enable docker
+<span class="hljs-meta">#</span><span class="bash"> 更新xfsprogs</span>
+yum -y update xfsprogs
+<span class="hljs-meta">#</span><span class="bash"> 启动</span>
+systemctl start docker
+docker info
+<span class="hljs-meta">#</span><span class="bash"> 测试docker是否已经能够正常使用</span>
+<span class="hljs-meta">#</span><span class="bash"> 启动第一个容器</span>
+docker run hello-world
+</code></pre>
+</li>
+</ol>
+<h1 id="%E5%9B%9B%E3%80%81%E5%90%AF%E5%8A%A8rancher">四、启动Rancher <a class="header-anchor" href="#%E5%9B%9B%E3%80%81%E5%90%AF%E5%8A%A8rancher">#</a></h1>
+<ol>
+<li>
+<p>启动rancher
+启动时需要添加 <code>--privileged</code> 参数</p>
+<pre><code class="language-shell"><span class="hljs-meta">#</span><span class="bash"> docker run -d --restart=unless-stopped --privileged --name rancher -p 80:80 -p 443:443 rancher/rancher:stable</span>
+</code></pre>
+</li>
+<li>
+<p>查看日志</p>
+<pre><code>如果没有明显的错误就运行成功了
+# docker logs -f rancher
+</code></pre>
+</li>
+<li>
+<p>查看运行状态</p>
+<pre><code># docker ps
+</code></pre>
+</li>
+<li>
+<p>在Web界面登录</p>
+<pre><code>https://rancherIp:7643
+</code></pre>
+</li>
+</ol>
+<h1 id="%E4%BA%94%E3%80%81k8s%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86">五、K8s集群管理 <a class="header-anchor" href="#%E4%BA%94%E3%80%81k8s%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86">#</a></h1>
+<ol>
+<li>添加一个K8s集群</li>
+<li>选择自定义</li>
+<li>编写集群信息
+<ol>
+<li>输入集群名称</li>
+<li>选择K8s版本</li>
+<li>选择网络类型 Flannel</li>
+<li>点击下一步</li>
+<li>创建Master节点时上面三个组件（etcd controlPlane Worker）全部勾选，设置Master节点的名称 k8s-master</li>
+<li>复制下面的docker命令在master节点服务器上运行</li>
+<li>点击完成，进入管理页面等待程序启动完成</li>
+<li>集群状态变换成<code>Active</code>表示启动完成</li>
+</ol>
+</li>
+<li>worker-node添加
+各节点服务器环境及Docker配置好后，运行下面命令加入到K8s集群<pre><code class="language-shell">docker run -d --privileged \
+--restart=unless-stopped \
+--net=host \
+-v /etc/kubernetes:/etc/kubernetes 
+-v /var/run:/var/run rancher/rancher-agent:v2.6.3 \
+--server https://internal.pisx.com:7643 \
+--token f4jlvlq88xmfdspqbbv67***************kzmw7sqvqt4z6zshw54 \
+--ca-checksum 82740ea67cd0fe54768778****************c95ceb06266c34ed979b80c29b0 \
+--node-name k8s-node-1 --worker
+</code></pre>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>主机名</th>
+<th>组件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--node-name k8s-node-1</td>
+<td>--etcd --controlplane --worker</td>
+</tr>
+<tr>
+<td>--node-name k8s-node-2</td>
+<td>--etcd --controlplane --worker</td>
+</tr>
+</tbody>
+</table>
+<h1 id="%E5%85%AD%E3%80%81kubectl%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">六、Kubectl工具的安装 <a class="header-anchor" href="#%E5%85%AD%E3%80%81kubectl%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85">#</a></h1>
+<p>这里是将kubectl工具安装在master上</p>
+<ol>
+<li>
+<p>安装wget</p>
+<pre><code>yum install -y wget
+</code></pre>
+</li>
+<li>
+<p>下载kubectl</p>
+<pre><code>wget https://storage.googleapis.com/kubernetes-release/release/v1.18.20/bin/linux/amd64/kubectl
+</code></pre>
+</li>
+<li>
+<p>加x权限</p>
+<pre><code>chmod +x kubectl
+</code></pre>
+</li>
+<li>
+<p>将kubectl移到PATH中</p>
+<pre><code>mv kubectl /usr/local/bin/
+</code></pre>
+</li>
+<li>
+<p>查看版本</p>
+<pre><code>kubectl version --client
+</code></pre>
+</li>
+<li>
+<p>创建kube目录</p>
+<pre><code>mkdir ~/.kube
+</code></pre>
+</li>
+<li>
+<p>编辑~/.kube/config文件</p>
+<pre><code>vi ~/.kube/config
+</code></pre>
+<p>在Rancher页面中复制配置文件到剪贴板</p>
+<p>然后复制到config文件中，并保存退出。</p>
+</li>
+<li>
+<p>查看全部Pod状态</p>
+<pre><code>kubectl get pods -A
+</code></pre>
+</li>
+</ol>
+<p>至此Rancher搭建k8s集群完成！</p>
+</div></section><footer class="footer-container"><div class="footer-body"><img src="/light-docs/img/dubbo_gray.png"/><div class="cols-container"><div class="col col-12"><h3>免责声明</h3><p>免责声明的具体内容</p></div><div class="col col-6"><dl><dt>文档</dt><dd><a href="/light-docs/zh-cn/docs/demo1.html" target="_self">概览</a></dd><dd><a href="/light-docs/zh-cn/docs/demo2.html" target="_self">快速开始</a></dd><dd><a href="/light-docs/zh-cn/docs/Docsite-Usage.html" target="_self">开发者指南</a></dd></dl></div><div class="col col-6"><dl><dt>资源</dt><dd><a href="/light-docs/zh-cn/blog/index.html" target="_self">博客</a></dd><dd><a href="/light-docs/zh-cn/community/index.html" target="_self">社区</a></dd></dl></div></div><div class="copyright"><span>Copyright © 2018 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></div></div></footer></div></div>
+	<script src="https://f.alicdn.com/react/15.4.1/react-with-addons.min.js"></script>
+	<script src="https://f.alicdn.com/react/15.4.1/react-dom.min.js"></script>
+	<script>
+		window.rootPath = '/light-docs';
+  </script>
+	<script src="/light-docs/build/documentation.js"></script>
+</body>
+</html>

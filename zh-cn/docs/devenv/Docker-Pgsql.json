@@ -1,0 +1,6 @@
+{
+  "filename": "Docker-Pgsql.md",
+  "__html": "<p><a href=\"https://hub.docker.com/_/postgres\">Postgres</a></p>\n<pre><code class=\"language-shell\">docker run -d \\\n  --publish 5432:5432 \\\n  --env POSTGRES_PASSWORD=postgres \\\n  --restart=no \\\n  --name postgres \\\n  postgres:12.11\n\ndocker exec -it -u root postgres /bin/bash\n\ndocker container restart postgres\n</code></pre>\n<ul>\n<li>Account\npostgres/postgres</li>\n</ul>\n",
+  "link": "/zh-cn/docs/devenv/Docker-Pgsql.html",
+  "meta": {}
+}
