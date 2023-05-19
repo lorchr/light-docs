@@ -352,6 +352,18 @@
       .footer-container .footer-body .copyright span {
         display: inline-block;
         margin: 0 auto; }
+    .footer-container .footer-body .poweredBy {
+      min-height: 60px;
+      line-height: 20px;
+      text-align: center;
+      font-family: Avenir-Medium;
+      font-size: 12px;
+      color: #999;
+      display: flex;
+      align-items: center; }
+      .footer-container .footer-body .poweredBy span {
+        display: inline-block;
+        margin: 0 auto; }
 
 @media screen and (max-width: 640px) {
   .footer-container .footer-body .cols-container .col {
