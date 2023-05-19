@@ -8,7 +8,7 @@ export default {
       buttons: [
         {
           text: '立即开始',
-          link: '/zh-cn/docs/Quick-Start.html',
+          link: '/zh-cn/docs/site/Quick-Start.html',
           type: 'primary',
         },
         {

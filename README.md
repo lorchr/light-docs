@@ -2,10 +2,11 @@
 ```shell
 node.js > 6.x
 ```
+
 # Usage
 ## Install
 ```shell
-npm install docsite -g
+npm install -g docsite
 ```
 
 ## Init a project
@@ -26,3 +27,8 @@ $ docsite start
 ```shell
 $ docsite build
 ```
+
+## 访问连接
+
+- http://localhost:8080
+- https://lorchr.github.io/light-docs

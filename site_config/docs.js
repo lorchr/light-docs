@@ -236,6 +236,16 @@ export default {
               },
             ],
           },
+          {
+            title: 'Linux',
+            opened: false,
+            children: [
+              {
+                title: 'Linux服务器时间同步',
+                link: '/zh-cn/docs/Linux/Ntp-Time-Sync.html',
+              },
+            ],
+          },
         ],
       },
     ],

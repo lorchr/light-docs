@@ -15,7 +15,7 @@ export default {
       {
         key: 'docs',
         text: 'DOCS',
-        link: '/en-us/docs/Docsite-Usage.html',
+        link: '/en-us/docs/site/Overview.html',
       },
       {
         key: 'blog',
@@ -30,22 +30,22 @@ export default {
     ],
     disclaimer: {
       title: 'Disclaimer',
-      content: 'the disclaimer content',
+      content: 'Build By docsite powered by https://docsite.js.org',
     },
     documentation: {
       title: 'Documentation',
       list: [
         {
           text: 'Overview',
-          link: '/en-us/docs/demo1.html',
+          link: '/en-us/docs/site/Overview.html',
         },
         {
           text: 'Quick start',
-          link: '/en-us/docs/demo2.html',
+          link: '/en-us/docs/site/Quick-Start.html',
         },
         {
           text: 'Developer guide',
-          link: '/en-us/docs/Docsite-Usage.html',
+          link: '/en-us/docs/site/Developer-Guide.html',
         },
       ],
     },
@@ -63,6 +63,7 @@ export default {
       ],
     },
     copyright: 'Copyright © 2018 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    "poweredBy": "Poered By: https://github.com/txd-team/docsite",
   },
   'zh-cn': {
     pageMenu: [
@@ -74,7 +75,7 @@ export default {
       {
         key: 'docs',
         text: '文档',
-        link: '/zh-cn/docs/single/00-Docsite-Usage.html',
+        link: '/zh-cn/docs/site/Overview.html',
       },
       {
         key: 'blog',
@@ -89,22 +90,22 @@ export default {
     ],
     disclaimer: {
       title: '免责声明',
-      content: '免责声明的具体内容',
+      content: '站点由 https://docsite.js.org 构建',
     },
     documentation: {
       title: '文档',
       list: [
         {
           text: '概览',
-          link: '/zh-cn/docs/demo1.html',
+          link: '/zh-cn/docs/site/Overview.html',
         },
         {
           text: '快速开始',
-          link: '/zh-cn/docs/demo2.html',
+          link: '/zh-cn/docs/site/Quick-Start.html',
         },
         {
           text: '开发者指南',
-          link: '/zh-cn/docs/Docsite-Usage.html',
+          link: '/zh-cn/docs/site/Developer-Guide.html',
         },
       ],
     },
@@ -122,5 +123,6 @@ export default {
       ],
     },
     copyright: 'Copyright © 2018 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    "poweredBy": "Poered By: https://github.com/txd-team/docsite",
   },
 };

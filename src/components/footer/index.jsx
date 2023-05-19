@@ -45,6 +45,7 @@ class Footer extends React.Component {
             </div>
           </div>
           <div className="copyright"><span>{dataSource.copyright}</span></div>
+          <div className="poweredBy"><span>{dataSource.poweredBy}</span></div>
         </div>
       </footer>
     );

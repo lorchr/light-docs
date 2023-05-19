@@ -13,7 +13,7 @@ node -v
 npm -v
 
 # 全局安装Docsite
-npm install docsite -g
+npm install -g docsite
 ```
 
 ## 二、运行
@@ -23,7 +23,8 @@ docsite init <project_name>
 
 # 示例
 cd /home/lorchr/ && docsite init light-docs
-mkdirdir ./light-docs && cd ./light-docs && docsite init
+# 或
+mkdir ./light-docs && cd ./light-docs && docsite init
 
 # 预览
 docsite start
@@ -39,7 +40,7 @@ docsite build
 {
   rootPath: '/light-docs', // 发布到服务器的根目录，需以/开头但不能有尾/，如果只有/，请填写空字符串
   port: 8080, // 本地开发服务器的启动端口
-  domain: 'dubbo.apache.org', // 站点部署域名，无需协议和path等
+  domain: 'site.lorchr.top', // 站点部署域名，无需协议和path等
   defaultSearch: 'baidu', // 默认搜索引擎，baidu或者google
   defaultLanguage: 'zh-cn',
 }
@@ -192,7 +193,7 @@ location /light-docs/ {
 error_page  404  /home/lorchr/light-docs/404.html;
 ```
 
-### 2. Github Pages
+### 2. 部署到Github Pages
 
 - [GitHub Actions 官方文档](https://docs.github.com/en/actions)
 - [GitHub Actions 官方插件市场](https://github.com/marketplace?type=actions)
